@@ -1,3 +1,19 @@
+# npm install -g firebase-tools
+
+# firebase init , if face error, npm update -g
+
+# npm install -g firebase-tools@10.9.2
+
+# firebase init,
+
+# which features of firebase we want to usenpm
+
+# when reach public directory: "build"
+
+# npm run build
+
+# firebase deploy
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
