@@ -103,6 +103,17 @@ function StudentDetailForm () {
 
   ]
 
+  useEffect(() => {
+    const fetchUser = async () => {
+      const data = await addMemberAPI.getCurrentUser()
+      console.log(data)
+      return data
+    }
+    
+    fetchUser()
+
+  },[])
+
   const addMemberHandleSubmit = async (event) => {
     const resp = await addMemberAPI.addMember(member)
 

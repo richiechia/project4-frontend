@@ -19,13 +19,23 @@ class AddMemberAPI {
 
   async addMember(member) {
     try {
-      const data = await axios.post(`${this.localhost}/memberdetails/addmember`, {member})
+      const data = await axios.post(`${this.localhost}/memberdetails/addmember`, {member}, {withCredentials: true})
 
       
       return data.data
     } catch (error) {
       console.error(error)
       return error
+    }
+  }
+
+  async getCurrentUser() {
+    try {
+      const data = await axios.get(`${this.localhost}/memberdetails/getCurrentUser`)
+      
+      return data.data
+    } catch(error) {
+      console.error(error)
     }
   }
 

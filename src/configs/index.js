@@ -7,7 +7,7 @@ const config = {
   isBrowser: typeof window !== 'undefined',
   isServer: typeof window === 'undefined',
   defaultTimeZone: 'Asia/Hong_Kong',
-  apiUrl: `http://localhost:3005`,
+  apiUrl: `http://localhost:3004`,
 };
 
 export default config;

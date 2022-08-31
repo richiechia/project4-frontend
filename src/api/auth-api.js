@@ -1,12 +1,11 @@
 import { apiService } from '../services/api.service';
 
 class AuthApi {
-  async signIn({ email, password }) {
+  async signIn({ loginMap }) {
     return new Promise((resolve, reject) => {
       try {
-        const user = apiService.post('/sign-in', {
-          email,
-          password,
+        const user = apiService.post('/auth/signIn', {
+          loginMap
         });
 
         resolve(user);
@@ -20,7 +19,7 @@ class AuthApi {
   async reAuth(query) {
     return new Promise((resolve, reject) => {
       try {
-        const resp = apiService.get(`/re-auth`);
+        const resp = apiService.get(`/auth/re-auth`);
         resolve(resp);
       } catch (err) {
         console.error('[Auth Api]: ', err);
@@ -32,7 +31,7 @@ class AuthApi {
   async verifySignIn(query) {
     return new Promise((resolve, reject) => {
       try {
-        const resp = apiService.get(`/verify-sign-in`);
+        const resp = apiService.get(`/auth/verify-signin`);
         resolve(resp);
       } catch (err) {
         console.error('[Auth Api]: ', err);
@@ -44,7 +43,7 @@ class AuthApi {
   async logout() {
     return new Promise((resolve, reject) => {
       try {
-        resolve(apiService.get('/sign-out'));
+        resolve(apiService.get('/auth/logout'));
       } catch (err) {
         console.error('[Auth Api]: ', err);
         reject(new Error('Internal server error'));

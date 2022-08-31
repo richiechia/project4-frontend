@@ -19,10 +19,7 @@ const routes = [
     path: '/login',
     element: <Registration />,
   },
-  {
-    path: '/addstudent',
-    element: <AddStudent />,
-  },
+
 
 ]
 
@@ -30,7 +27,11 @@ const authenticatedRoutes = [
     {
     path: '/attendance',
     element: <></>,
-  }
+    },
+    {
+    path: '/addstudent',
+    element: <AddStudent />,
+  },
 ]
 
 function RequireAuth({ children }) {
@@ -39,7 +40,7 @@ function RequireAuth({ children }) {
 
   if (!isAuthenticated) {
     // write path of sign-in page here instead of '/'
-    return <Navigate to="/" state={{ from: location }} replace />;
+    return <Navigate to="/login" state={{ from: location }} replace />;
   }
 
   return children;
